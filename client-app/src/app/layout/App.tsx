@@ -3,6 +3,7 @@ import NavBar from './NavBar';
 import { observer } from 'mobx-react-lite';
 import { Outlet, useLocation } from 'react-router-dom';
 import HomePage from '../../features/home/HomePage';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   // function handleSelectActivity(id: string){
@@ -34,6 +35,7 @@ function App() {
   return (
     // <> </> : fragment component
     <>
+      <ToastContainer position='bottom-right' hideProgressBar theme='colored'/>
       {location.pathname === '/' ? <HomePage /> : (
         <>
           <NavBar ></NavBar>
