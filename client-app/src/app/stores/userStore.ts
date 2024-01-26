@@ -6,6 +6,7 @@ import { router } from "../router/Routes";
 
 export default class UserStore {
     user: User | null = null;
+
     constructor(){
         makeAutoObservable(this)
     }
@@ -52,5 +53,9 @@ export default class UserStore {
         }catch(error){
             console.log(error);
         }
+    }
+
+    setImage= (image:string) => {
+        if (this.user) this.user.image = image;
     }
 }
