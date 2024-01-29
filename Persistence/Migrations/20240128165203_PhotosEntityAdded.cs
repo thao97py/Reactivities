@@ -5,25 +5,25 @@
 namespace Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class PhotoEntityUpdated : Migration
+    public partial class PhotosEntityAdded : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_photos_AspNetUsers_AppUserId",
-                table: "photos");
+                name: "FK_Photo_AspNetUsers_AppUserId",
+                table: "Photo");
 
             migrationBuilder.DropPrimaryKey(
-                name: "PK_photos",
-                table: "photos");
+                name: "PK_Photo",
+                table: "Photo");
 
             migrationBuilder.RenameTable(
-                name: "photos",
+                name: "Photo",
                 newName: "Photos");
 
             migrationBuilder.RenameIndex(
-                name: "IX_photos_AppUserId",
+                name: "IX_Photo_AppUserId",
                 table: "Photos",
                 newName: "IX_Photos_AppUserId");
 
@@ -53,21 +53,21 @@ namespace Persistence.Migrations
 
             migrationBuilder.RenameTable(
                 name: "Photos",
-                newName: "photos");
+                newName: "Photo");
 
             migrationBuilder.RenameIndex(
                 name: "IX_Photos_AppUserId",
-                table: "photos",
-                newName: "IX_photos_AppUserId");
+                table: "Photo",
+                newName: "IX_Photo_AppUserId");
 
             migrationBuilder.AddPrimaryKey(
-                name: "PK_photos",
-                table: "photos",
+                name: "PK_Photo",
+                table: "Photo",
                 column: "Id");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_photos_AspNetUsers_AppUserId",
-                table: "photos",
+                name: "FK_Photo_AspNetUsers_AppUserId",
+                table: "Photo",
                 column: "AppUserId",
                 principalTable: "AspNetUsers",
                 principalColumn: "Id");

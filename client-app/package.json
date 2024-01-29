@@ -11,6 +11,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@microsoft/signalr": "^8.0.0",
+    "@types/minimatch": "^5.1.2",
     "@types/react-datepicker": "^4.19.5",
     "@types/uuid": "^9.0.7",
     "axios": "^1.6.2",
