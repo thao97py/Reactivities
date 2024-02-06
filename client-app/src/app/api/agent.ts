@@ -76,7 +76,7 @@ const Activities = {
     update: (activity:ActivityFormValues)=> requests.put<void>(`/activities/${activity.id}`, activity),
     delete: (id:string) =>requests.del<void>(`/activities/${id}`),
     attend:(id:string) =>requests.post<void>(`/activities/${id}/attend`,{})
-}
+} 
 
 const Account = {
     current: () => requests.get<User>('/account'),
@@ -95,6 +95,8 @@ const Profiles = {
     },
     setMainPhoto: (id:string) => requests.post(`/photos/${id}/setMain`,{}),
     deletePhoto: (id:string) => requests.del(`/photos/${id}`),
+    updateFollowing: (username: String) => requests.post(`/follow/${username}`,{}),
+    listFollowings: (username: string, predicate: string) => requests.get<Profile[]>(`/follow/${username}?predicate=${predicate}`),
 }
 
 const agent = {
