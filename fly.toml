@@ -1,0 +1,28 @@
+# fly.toml app configuration file generated for reactivities-app-thao on 2024-02-13T15:06:51-08:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'reactivities-app-thao'
+primary_region = 'sea'
+
+[build]
+  image = 'thao97py/reactivities:latest'
+
+[env]
+  ASPNETCORE_URLS="http://+:8080"
+  Cloudinary__CloudName="dgj1vvcro"
+  Cloudinary__ApiKey="278822627624675"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  cpu_kind = 'shared'
+  cpus = 1
+  memory_mb = 1024
